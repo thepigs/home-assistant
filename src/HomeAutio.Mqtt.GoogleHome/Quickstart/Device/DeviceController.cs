@@ -16,7 +16,7 @@ using Microsoft.Extensions.Logging;
 
 namespace IdentityServer4.Quickstart.UI.Device
 {
-    [Authorize]
+    //[Authorize]
     [SecurityHeaders]
     public class DeviceController : Controller
     {

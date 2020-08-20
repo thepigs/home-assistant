@@ -17,7 +17,7 @@ namespace HomeAutio.Mqtt.GoogleHome.Controllers
     /// <summary>
     /// Devices controller.
     /// </summary>
-    [Authorize]
+  //  [Authorize]
     public class GoogleDeviceController : Controller
     {
         private readonly IGoogleDeviceRepository _deviceRepository;

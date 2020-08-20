@@ -17,7 +17,7 @@ namespace HomeAutio.Mqtt.GoogleHome.Controllers
     /// <summary>
     /// Traits controller.
     /// </summary>
-    [Authorize]
+    //[Authorize]
     public class GoogleTraitController : Controller
     {
         private readonly IGoogleDeviceRepository _deviceRepository;

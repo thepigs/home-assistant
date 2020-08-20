@@ -34,6 +34,11 @@ namespace HomeAutio.Mqtt.GoogleHome.Models.State
         /// Room hint.
         /// </summary>
         public string RoomHint { get; set; }
+        
+        /// <summary>
+        /// Room hint.
+        /// </summary>
+        public string FriendlyName { get; set; }
 
         /// <summary>
         /// Device name information.

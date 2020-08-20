@@ -19,7 +19,7 @@ namespace IdentityServer4.Quickstart.UI
     /// This controller processes the consent UI
     /// </summary>
     [SecurityHeaders]
-    [Authorize]
+    //[Authorize]
     public class ConsentController : Controller
     {
         private readonly IIdentityServerInteractionService _interaction;

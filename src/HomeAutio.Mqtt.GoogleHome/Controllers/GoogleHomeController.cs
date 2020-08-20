@@ -49,7 +49,7 @@ namespace HomeAutio.Mqtt.GoogleHome.Controllers
         /// <param name="request">Request.</param>
         /// <returns>Response.</returns>
         [HttpPost]
-        [Authorize(AuthenticationSchemes = IdentityServerAuthenticationDefaults.AuthenticationScheme)]
+        //[Authorize(AuthenticationSchemes = IdentityServerAuthenticationDefaults.AuthenticationScheme)]
         public IActionResult Post([FromBody]Models.Request.Request request)
         {
             // Begin building Response

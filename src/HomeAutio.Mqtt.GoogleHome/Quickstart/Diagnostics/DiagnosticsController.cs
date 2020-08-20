@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace IdentityServer4.Quickstart.UI
 {
     [SecurityHeaders]
-    [Authorize]
+    //[Authorize]
     public class DiagnosticsController : Controller
     {
         public async Task<IActionResult> Index()

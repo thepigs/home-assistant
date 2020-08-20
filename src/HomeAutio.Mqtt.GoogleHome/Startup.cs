@@ -285,9 +285,15 @@ namespace HomeAutio.Mqtt.GoogleHome
         {
             // Set the app base path when behind a proxy that changes it
             var pathBase = Environment.GetEnvironmentVariable("ASPNETCORE_PATHBASE");
+            pathBase="/google/home";
             if (!string.IsNullOrEmpty(pathBase))
             {
                 app.UsePathBase(pathBase);
+                app.Use((context, next) =>
+                {
+                    context.Request.PathBase = pathBase;
+                    return next();
+                });
             }
 
             // Show error page in development mode

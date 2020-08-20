@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -65,6 +66,10 @@ namespace HomeAutio.Mqtt.GoogleHome
             WebHost.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration(configBuilder => configBuilder.AddConfiguration(config))
                 .UseStartup<Startup>()
+                .UseKestrel(options =>
+                {
+                        options.Listen(IPAddress.Any, 5000);
+                })
                 .UseSerilog();
     }
 }

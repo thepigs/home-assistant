@@ -192,8 +192,10 @@ namespace HomeAutio.Mqtt.GoogleHome
                     // Check if device supports the requested command class
                     if (deviceSupportedCommands.ContainsKey(execution.Command))
                     {
+                        new MqttHandler(MqttClient, device).Handle(execution);
+                        
                         // Find the specific commands supported parameters it can handle
-                        var deviceSupportedCommandParams = deviceSupportedCommands[execution.Command];
+                        /*var deviceSupportedCommandParams = deviceSupportedCommands[execution.Command];
 
                         // Handle command delegation
                         if (deviceSupportedCommandParams.ContainsKey("_"))
@@ -201,14 +203,14 @@ namespace HomeAutio.Mqtt.GoogleHome
                             // Build the MQTT message
                             var topic = deviceSupportedCommandParams["_"];
                             var payload = execution.Params != null ? JsonConvert.SerializeObject(execution.Params) : string.Empty;
-
-                            await MqttClient.PublishAsync(new MqttApplicationMessageBuilder()
+*/
+                            /*await MqttClient.PublishAsync(new MqttApplicationMessageBuilder()
                                 .WithTopic(topic)
                                 .WithPayload(payload)
                                 .WithAtLeastOnceQoS()
                                 .Build())
-                                .ConfigureAwait(false);
-                        }
+                                .ConfigureAwait(false);*/
+  /*                      }
 
                         // Handle remaining command state param negotiation
                         if (execution.Params != null)
@@ -256,7 +258,7 @@ namespace HomeAutio.Mqtt.GoogleHome
                                         .ConfigureAwait(false);
                                 }
                             }
-                        }
+                        }*/
                     }
                 }
             }
